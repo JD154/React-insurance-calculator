@@ -47,6 +47,7 @@ code {
   font-size: 1rem;
   color: #212121;
   text-align: center;
+  margin: 0 0 16px 0;
 }
 
 .input-field{
@@ -80,6 +81,10 @@ select{
 
 .form-btn:hover{
   background-color: #1e88e5;
+}
+
+ul, p{
+  margin: 0;
 }
 
 .resume-wrapper{

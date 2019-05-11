@@ -9,7 +9,7 @@ class Resume extends Component {
 
     return(
       <div className="resume-wrapper">
-        <h1 className="form-title">Your selected</h1>
+        <h1 className="form-title">Your selection</h1>
         <ul>
           <li>Value: {value}</li>
           <li>Brand: {brand}</li>
