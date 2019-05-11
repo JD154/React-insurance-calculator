@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 
 class Form extends Component{
-
+  
+  valueRef = React.createRef();
   brandRef = React.createRef();
   yearRef = React.createRef();
   planRef = React.createRef();
-  completeRef = React.createRef();
 
   handle = (e) => {
     e.preventDefault();
-    const planType = this.planRef.current.checked ? 'complete' : 'basic';
 
     const carInfo = {
+      value: this.valueRef.current.value,
       brand: this.brandRef.current.value,
       year: this.yearRef.current.value,
-      plan: planType
+      plan: this.planRef.current.checked ? 'complete' : 'basic'
     }
     this.props.handle(carInfo);
 
@@ -24,7 +24,11 @@ class Form extends Component{
   render(){
     return(
       <form className="form-wrapper" onSubmit={this.handle}>
-      <h1 className="form-title">Complete the following fields</h1>
+        <h1 className="form-title">Complete the following fields</h1>
+        <div className="input-field">
+          <label>Car value</label>
+          <input type="text" ref={this.valueRef} required/>
+        </div>
         <div className="input-field">
           <label>Brand</label>
           <select name="brand" ref={this.brandRef}>

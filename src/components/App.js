@@ -13,13 +13,12 @@ class App extends Component {
   }
 
   calculateInsurance = (data) => {
-    const {brand, year, plan} = data;
-
-    let result = 2000;
-    result = calculateInsurance(year, result, brand, plan)
+    const {value, brand, year, plan} = data;
+    let result = calculateInsurance(value, year, brand, plan)
     console.log(result);
 
     const carData = {
+      value: value,
       brand: brand,
       year: year,
       plan: plan

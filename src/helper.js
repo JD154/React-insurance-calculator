@@ -1,5 +1,14 @@
-function calculateInsurance(year, base, model, plan ){
-  let calculation = base;
+function calculateInsurance(value, year, model, plan ){
+  let calculation;
+
+  if (value < 5000) {
+    calculation = 2000;
+  }else if(value < 10000 && value > 5000){
+    calculation = 3000;
+  }else if (value > 10000) {
+    calculation = 5000;
+  }
+  
   let yearDiff = new Date().getFullYear() - year;  
 
   calculation -= ((yearDiff * 3) * calculation) / 100;
