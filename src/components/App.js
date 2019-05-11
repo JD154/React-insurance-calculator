@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Header from './Header';
 import Form from './Form';
-import {getYearDiff, getDiff, getIncrement, getPlan, firstMayus} from '../helper';
+import calculateInsurance from '../helper';
 import Resume from './Resume';
 import Result from './Result';
 
@@ -16,14 +16,7 @@ class App extends Component {
     const {brand, year, plan} = data;
 
     let result = 2000;
-
-    const diff = getYearDiff(year);
-    
-    result -= getDiff(diff, result);
-
-    result = getIncrement(brand) * result;
-    
-    result = parseFloat(getPlan(plan) * result).toFixed(2);
+    result = calculateInsurance(year, result, brand, plan)
     console.log(result);
 
     const carData = {

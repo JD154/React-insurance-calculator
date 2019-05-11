@@ -10,7 +10,7 @@ class Result extends Component{
     return(
       <div className="resume-wrapper">
         <h1 className="form-title">Calculated price</h1>
-        <p>${resultPrice}</p>
+        <p className="result-price">${resultPrice}</p>
       </div>
     )
   }
